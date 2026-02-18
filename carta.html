@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta — La Mulata · Santander</title>
+    <meta name="description" content="Carta de La Mulata en Santander. Pinchos, menú del día, raciones, carnes, pescados y postres caseros. Calle Tetuán.">
+    <meta name="theme-color" content="#1c1c1c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg:#faf8f4;--bg-dark:#1c1c1c;--text:#2a2a2a;--text-light:#6b6560;--accent:#c0392b;--accent-light:#e74c3c;--warm:#8b4513;--cream:#f5f0e8;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif}
+        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+        .nav{position:sticky;top:0;z-index:100;background:rgba(28,28,28,.95);backdrop-filter:blur(12px);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;text-decoration:none}.nav-brand span{color:var(--accent-light)}
+        .nav-links{display:flex;align-items:center;gap:1.5rem}.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.88rem;font-weight:500}.nav-links a:hover{color:#fff}
+        .nav-cta{background:var(--accent)!important;color:#fff!important;padding:.45rem 1.2rem;border-radius:6px;font-weight:600!important}
+        .carta-header{background:var(--bg-dark);color:#fff;padding:5rem 2rem 3rem;text-align:center;position:relative}
+        .carta-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(192,57,43,.12),transparent 70%)}
+        .carta-header-inner{position:relative;z-index:1}
+        .carta-header h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;margin-bottom:.5rem}
+        .carta-header h1 em{font-style:italic;color:var(--accent-light)}
+        .carta-header p{font-size:1rem;opacity:.6;max-width:400px;margin:0 auto}
+        .cat-nav{display:flex;gap:.5rem;padding:1rem 2rem;overflow-x:auto;background:#fff;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:60px;z-index:90;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cat-nav::-webkit-scrollbar{display:none}
+        .cat-nav a{flex-shrink:0;padding:.5rem 1.2rem;background:var(--cream);border-radius:50px;text-decoration:none;color:var(--text);font-size:.85rem;font-weight:500;transition:all .2s;white-space:nowrap}
+        .cat-nav a:hover,.cat-nav a.active{background:var(--accent);color:#fff}
+        .menu-section{padding:2.5rem 1.5rem 1.5rem;max-width:650px;margin:0 auto}
+        .menu-section-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--accent)}
+        .menu-section-header .icon{font-size:1.8rem}
+        .menu-section-header h2{font-family:var(--serif);font-size:1.6rem;font-weight:700}
+        .menu-section-header .count{margin-left:auto;font-size:.8rem;color:var(--text-light);background:var(--cream);padding:.3rem .8rem;border-radius:50px}
+        .menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.04)}
+        .menu-item:last-child{border-bottom:none}
+        .item-info{flex:1}.item-name{font-weight:600;font-size:.95rem}.item-desc{font-size:.83rem;color:var(--text-light);margin-top:.25rem;line-height:1.5}
+        .item-badge{display:inline-block;font-size:.7rem;font-weight:600;color:var(--accent);background:rgba(192,57,43,.08);padding:.15rem .5rem;border-radius:4px;margin-top:.3rem}
+        .divider{max-width:650px;margin:0 auto;padding:0 1.5rem;border:none;height:1px;background:rgba(0,0,0,.06)}
+        .cta-mid{max-width:650px;margin:1rem auto 0;padding:2rem;background:var(--accent);border-radius:12px;text-align:center;color:#fff}
+        .cta-mid h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+        .cta-mid p{font-size:.9rem;opacity:.8;margin-bottom:1rem}
+        .cta-mid a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--accent);padding:.7rem 1.8rem;border-radius:6px;text-decoration:none;font-weight:600}
+        .cta-bottom{background:var(--bg-dark);color:#fff;padding:4rem 2rem;text-align:center}
+        .cta-bottom-inner{max-width:550px;margin:0 auto}
+        .cta-bottom h2{font-family:var(--serif);font-size:2rem;font-weight:700;margin-bottom:.8rem}
+        .cta-bottom p{font-size:1rem;opacity:.7;margin-bottom:2rem}
+        .cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+        .cta-btns a{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-weight:600}
+        .btn-red{background:var(--accent);color:#fff}.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+        footer{text-align:center;padding:2rem;font-size:.8rem;color:var(--text-light);border-top:1px solid rgba(0,0,0,.06)}footer a{color:var(--accent);text-decoration:none}
+        @media(max-width:600px){.nav{padding:0 1.2rem}.carta-header{padding:4rem 1.5rem 2.5rem}.cta-btns{flex-direction:column;align-items:center}}
+    </style>
+</head>
+<body>
+<nav class="nav"><a href="index.html" class="nav-brand">La <span>Mulata</span></a><div class="nav-links"><a href="index.html">← Inicio</a><a href="tel:+34942363785" class="nav-cta">📞 Reservar</a></div></nav>
+
+<header class="carta-header"><div class="carta-header-inner"><h1>Nuestra <em>carta</em></h1><p>Calle Tetuán · Santander</p></div></header>
+
+<nav class="cat-nav"><a href="#pinchos">🍢 Pinchos</a><a href="#raciones">🍽️ Raciones</a><a href="#carnes">🥩 Carnes</a><a href="#pescados">🐟 Pescados</a><a href="#postres">🍫 Postres</a><a href="#bebidas">🍷 Bebidas</a></nav>
+
+<div class="menu-section" id="pinchos"><div class="menu-section-header"><span class="icon">🍢</span><h2>Pinchos y tapas</h2><span class="count">6 platos</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Croquetas caseras de jamón</div><div class="item-desc">Cremosas, crujientes, de jamón ibérico</div><div class="item-badge">⭐ Especialidad</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Tortilla española</div><div class="item-desc">Jugosa, con cebolla caramelizada</div><div class="item-badge">⭐ Popular</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Boquerones en vinagre</div><div class="item-desc">Marinados al estilo tradicional</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Rabas</div><div class="item-desc">Calamares a la romana, la tapa cántabra</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Patatas bravas</div><div class="item-desc">Con salsa brava casera y alioli</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Pinchos variados del día</div><div class="item-desc">Selección diaria — consultar en barra</div></div></div>
+</div>
+
+<hr class="divider">
+
+<div class="menu-section" id="raciones"><div class="menu-section-header"><span class="icon">🍽️</span><h2>Raciones</h2><span class="count">5 platos</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Ensalada mixta</div><div class="item-desc">Lechuga, tomate, atún, cebolla y aceitunas</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Ensalada César</div><div class="item-desc">Pollo a la plancha, parmesano, picatostes</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Tabla de ibéricos</div><div class="item-desc">Jamón, lomo, chorizo y queso curado</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Pimientos de padrón</div><div class="item-desc">Unos pican y otros no</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Champiñones al ajillo</div><div class="item-desc">Con ajo, perejil y un toque de guindilla</div></div></div>
+</div>
+
+<div style="padding:0 1.5rem"><div class="cta-mid"><h3>📞 ¿Ya sabe lo que quiere?</h3><p>Reserve su mesa y lo tendremos preparado.</p><a href="tel:+34942363785">Llamar: 942 36 37 85</a></div></div>
+
+<hr class="divider" style="margin-top:2rem">
+
+<div class="menu-section" id="carnes"><div class="menu-section-header"><span class="icon">🥩</span><h2>Carnes</h2><span class="count">4 platos</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Chuletón de vaca</div><div class="item-desc">A la brasa, con guarnición de pimientos</div><div class="item-badge">⭐ Recomendado</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Solomillo a la plancha</div><div class="item-desc">Con patatas y pimientos del piquillo</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Secreto ibérico</div><div class="item-desc">A la brasa con ensalada</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Hamburguesa casera</div><div class="item-desc">Carne de vacuno, queso, bacon, lechuga y tomate</div></div></div>
+</div>
+
+<hr class="divider">
+
+<div class="menu-section" id="pescados"><div class="menu-section-header"><span class="icon">🐟</span><h2>Pescados</h2><span class="count">4 platos</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Merluza en salsa verde</div><div class="item-desc">Receta tradicional cántabra con almejas</div><div class="item-badge">⭐ Clásico</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Bacalao al pil-pil</div><div class="item-desc">Con aceite de oliva y ajo confitado</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Lubina a la plancha</div><div class="item-desc">Con verduras de temporada</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Pulpo a la gallega</div><div class="item-desc">Pimentón de la Vera y aceite de oliva virgen</div></div></div>
+</div>
+
+<hr class="divider">
+
+<div class="menu-section" id="postres"><div class="menu-section-header"><span class="icon">🍫</span><h2>Postres</h2><span class="count">4 platos</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Tarta de queso</div><div class="item-desc">Casera, cremosa, al horno</div><div class="item-badge">⭐ Imprescindible</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Flan casero</div><div class="item-desc">Con caramelo y nata</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Arroz con leche</div><div class="item-desc">Receta cántabra, con canela</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Helado artesanal</div><div class="item-desc">Variedad de sabores</div></div></div>
+</div>
+
+<hr class="divider">
+
+<div class="menu-section" id="bebidas"><div class="menu-section-header"><span class="icon">🍷</span><h2>Bebidas</h2><span class="count">6 opciones</span></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Vinos de la casa</div><div class="item-desc">Tinto, blanco y rosado — Rioja y Ribera</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Cerveza</div><div class="item-desc">Caña, doble, jarra — tiradores premium</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Sidra natural</div><div class="item-desc">Asturiana, escanciada</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Café</div><div class="item-desc">Solo, cortado, con leche, americano</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Refrescos</div><div class="item-desc">Coca-Cola, Fanta, Aquarius, zumos</div></div></div>
+<div class="menu-item"><div class="item-info"><div class="item-name">Agua mineral</div><div class="item-desc">Natural o con gas</div></div></div>
+</div>
+
+<div class="cta-bottom"><div class="cta-bottom-inner"><h2>¿Le apetece venir?</h2><p>Reserve su mesa en la calle Tetuán. Le esperamos con los mejores sabores caseros de Santander.</p><div class="cta-btns"><a href="tel:+34942363785" class="btn-red">📞 Llamar: 942 36 37 85</a><a href="index.html" class="btn-ghost">← Volver a inicio</a></div></div></div>
+
+<footer><p>© 2026 La Mulata · Calle Tetuán · Santander</p><p style="margin-top:.4rem">Web creada por <a href="https://automatizar.net">Automatizar.net</a></p></footer>
+
+<script>
+const sections=document.querySelectorAll('.menu-section');const links=document.querySelectorAll('.cat-nav a');
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const l=document.querySelector(`.cat-nav a[href="#${e.target.id}"]`);if(l){l.classList.add('active');l.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})}}})},{threshold:.3,rootMargin:'-120px 0px -50% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
